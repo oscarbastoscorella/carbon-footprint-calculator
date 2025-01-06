@@ -11,7 +11,7 @@ This project is a user-friendly interface designed to calculate and track your c
 
 - https://carbon-calculator-ui.vercel.app/
 
-![full_600](https://github.com/user-attachments/assets/2576c1af-98d3-4ca1-b1a3-a567e35f0791)
+![full_600](https://github.com/user-attachments/assets/ae7d60c7-3e17-402c-9df5-d0c53b2a2c31)
 
 ## Technologies
 
@@ -49,8 +49,7 @@ This project is a user-friendly interface designed to calculate and track your c
 - Followed **Test-Driven development** creating unit tests when developing the components.
 - Used **Prettier** as a code formatter to maintain consistent code style.
 - Used **Storybook** to align components with Figma designs.
-  ![storybook_600](https://github.com/user-attachments/assets/eb44354a-6ba4-49d8-ab1f-0d597920f486)
-
+![storybook_600](https://github.com/user-attachments/assets/06c1cc79-7245-45c4-a24f-7bf3ed129503)
 
 ### Accessibility & Feedback
 
@@ -143,8 +142,8 @@ To run the Playwright tests with UI mode, use:
 ```sh
 pnpm playwright test --ui
 ```
+![e2e_600](https://github.com/user-attachments/assets/06a3672b-d00a-4ce8-97a0-e3ddb98da379)
 
-![e2e_600](https://github.com/user-attachments/assets/16248ab4-b723-48bb-82fe-bac9ac7eeb97)
 
 #### Auto Generate Tests with Codegen
 
