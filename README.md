@@ -60,6 +60,7 @@ This project is a user-friendly interface designed to calculate and track your c
 ### Continuous Integration
 
 - This project is set up with a CI pipeline (github actions) that automatically runs tests, lints the code, and checks spelling on each push to any branch. This ensures code quality and consistency throughout the development process.
+![ci_600](https://github.com/user-attachments/assets/9a549b97-3616-45ea-94ed-214af14d23f9)
 
 ### Design Patterns
 
@@ -116,6 +117,7 @@ To run unit tests:
 ```sh
 pnpm test
 ```
+![unit_tests_600](https://github.com/user-attachments/assets/154e6437-8313-49ed-8966-4a97dda38ef8)
 
 To build the project for production:
 
