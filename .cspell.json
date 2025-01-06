@@ -1,0 +1,21 @@
+{
+  "ignoreWords": [
+    "autodocs",
+    "Chakra",
+    "Bastos",
+    "codegen",
+    "highcharts",
+    "highstock",
+    "hookform",
+    "Zoomable",
+    "zustand"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    "src/mocks/**",
+    "src/theme/**"
+  ]
+}

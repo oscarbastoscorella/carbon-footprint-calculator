@@ -1,0 +1,58 @@
+name: Carbon Calculator UI - CI
+on:
+  push:
+    branches:
+      - "**"
+    paths-ignore:
+      - "README.md"
+jobs:
+  spelling-lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Set up Node.js (use latest compatible version)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run spell check
+        uses: streetsidesoftware/cspell-action@v6.10.0
+        with:
+          config: .cspell.json
+          files: "src/**/*.ts"
+      - name: Run linting
+        run: pnpm lint
+      - name: Run unit tests
+        run: pnpm test:ci
+
+  e2e-test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    needs: spelling-lint-and-test
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Set up Node.js (use latest compatible version)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Install Playwright Browsers
+        run: pnpm playwright install chromium --with-deps
+      - name: Run Playwright tests
+        run: pnpm playwright test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 5
