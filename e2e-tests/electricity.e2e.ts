@@ -1,4 +1,6 @@
-import { Locator, expect, test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
+
+import type { Locator } from "@playwright/test";
 
 test.describe("Electricity Page", () => {
   test.beforeEach(async ({ page }) => {
