@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { Locator, expect, test } from "@playwright/test";
 
 test.describe("Electricity Page", () => {
   test.beforeEach(async ({ page }) => {
@@ -79,8 +79,7 @@ test.describe("Electricity Page", () => {
   });
 });
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-async function assertVisible(elements: any) {
+async function assertVisible(elements: Locator[]) {
   for (const element of elements) {
     await expect(element).toBeVisible();
   }
